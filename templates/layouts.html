@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Web App</title>
+    <link rel="stylesheet" href="path/to/your/style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Your Web App</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/users">Users</a></li>
+                <li><a href="/icons">Icons</a></li>
+                <li><a href="/publications">Publications</a></li>
+                <li><a href="/user_interactions">User Interactions</a></li>
+                <li><a href="/search_filters">Search Filters</a></li>
+                <li><a href="/awards">Awards</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Web App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
