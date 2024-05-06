@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>Icons</h1>
+  <table>
+    <tr><th>Icon ID</th><th>Name</th><th>Occupation</th><th>DOB</th><th>DOD</th></tr>
+    {% for icon in icons %}
+      <tr><td>{{ icon.icon_id }}</td><td>{{ icon.name }}</td><td>{{ icon.occupation }}</td><td>{{ icon.DOB }}</td><td>{{ icon.DOD }}</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}
