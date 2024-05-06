@@ -45,20 +45,5 @@ def awards():
     awards_data = get_awards()
     return render_template('awards.html', awards=awards_data)
 
-@app.route('/display')
-def display():
-    songs = get_songs()
-    return render_template('display.html', songs=songs)
-
-@app.route('/insert_form')
-def insert_form():
-    return render_template('insert.html')
-
-
-@app.route('/add', methods=['POST'])
-def add():
-    create(request.form['title'], request.form['artist'], request.form['genre'])
-    return redirect(url_for('display'))
-
 if __name__ == '__main__':
     app.run(debug=True)
