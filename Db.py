@@ -2,10 +2,10 @@ import os
 import pymysql
 
 # Database connection parameters
-db_user = os.environ.get('icon')
-db_password = os.environ.get('icon')
-db_name = os.environ.get('iconDb')
-db_connection_name = os.environ.get('icon-422417:us-central1:icon')
+db_user = 'icon'
+db_password = 'icon'
+db_name = 'iconDb'
+db_connection_name = 'icon-422417:us-central1:icon'
 
 
 def open_connection():
@@ -31,11 +31,11 @@ def get_users():
     """
     conn = open_connection()
     with conn.cursor() as cursor:
-        cursor.execute('SELECT * FROM Users;')
+        sql = 'SELECT * FROM Users;'
+        cursor.execute(sql)
         users = cursor.fetchall()
+        return users
     conn.close()
-    return users
-
 
 def get_icons():
     """
