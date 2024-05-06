@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>User Interactions</h1>
+  <table>
+    <tr><th>Interaction ID</th><th>User ID</th><th>Icon ID</th><th>Interaction Type</th><th>Interaction Date</th></tr>
+    {% for interaction in user_interactions %}
+      <tr><td>{{ interaction.int_id }}</td><td>{{ interaction.user_id }}</td><td>{{ interaction.icon_id }}</td><td>{{ interaction.interaction_type }}</td><td>{{ interaction.interaction_date }}</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}
