@@ -1,0 +1,8 @@
+#app.yaml
+runtime: python39
+
+env_variables:
+  CLOUD_SQL_USERNAME: icon
+  CLOUD_SQL_PASSWORD: icon
+  CLOUD_SQL_DATABASE_NAME: iconDb
+  CLOUD_SQL_CONNECTION_NAME: icon-422417:us-central1:icon
