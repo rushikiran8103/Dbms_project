@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>Awards</h1>
+  <table>
+    <tr><th>Award ID</th><th>Icon ID</th><th>Name</th><th>Description</th></tr>
+    {% for award in awards %}
+      <tr><td>{{ award.award_id }}</td><td>{{ award.icon_id }}</td><td>{{ award.name }}</td><td>{{ award.description }}</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}
