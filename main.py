@@ -1,7 +1,7 @@
 # main.py controller
 
-from flask import Flask, redirect, request, url_for, render_template, jsonify
-from db import *
+from flask import Flask, redirect, request, url_for, render_template, jsonify 
+from db import get_users, get_icons, get_publications, get_user_interactions, get_search_filters, get_awards
 
 app = Flask(__name__)
 
@@ -18,7 +18,7 @@ def about():
 @app.route('/users')
 def users():
     users_data = get_users()
-    return render_template('users.html', users=users_data)
+    return render_template('users.html', users_data=users_data)
 
 @app.route('/icons')
 def icons():
