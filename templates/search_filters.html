@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>Search Filters</h1>
+  <table>
+    <tr><th>Filter ID</th><th>User ID</th><th>Filter Settings</th></tr>
+    {% for filter in search_filters %}
+      <tr><td>{{ filter.filter_id }}</td><td>{{ filter.user_id }}</td><td>{{ filter.filter_settings }}</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}
