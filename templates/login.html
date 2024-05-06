@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .container a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <p>Welcome to the login page!</p>
+        <p>If you don't have an account, you can <a href="registration.html">register here</a>.</p>
+        <form id="loginForm" action="login.php" method="POST" onsubmit="return validateLogin()">
+            <input type="text" id="username" name="username" placeholder="Username" required><br>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Login">
+            <div id="loginError" class="error"></div>
+        </form>
+        
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var loginError = document.getElementById('loginError');
+            loginError.innerHTML = '';
+
+            // Here, you would typically validate the credentials against your database
+            // For simplicity, let's assume a hardcoded username and password
+            if (username !== "user" || password !== "password") {
+                loginError.innerHTML = 'Invalid username or password';
+                return false;
+            }
+
+            alert('Login successful!');
+            return true;
+        }
+    </script>
+</body>
+</html>
